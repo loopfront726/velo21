@@ -10119,7 +10119,7 @@ velo.run(function()
 		end;
 		return false;
 	end;
-	custom_char = vape.Categories.Velocity:CreateModule({
+	custom_char = vape.Categories.Spec:CreateModule({
 		["Name"] = 'CustomCharacter',
 		["HoverText"] = 'Customizes your character.',
 		["Function"] = function(callback: boolean): void
@@ -10599,7 +10599,7 @@ velo.run(function()
 	local playerattachrange: table = {["Value"] = 50}
 	local playerattachpersist: table = {};
 	local playerattachplayers: table = {};
-	playerattach = vape.Categories.Velocity:CreateModule({
+	playerattach = vape.Categories.Spec:CreateModule({
 		["Name"] = 'PlayerAttach',
 		["HoverText"] = 'Attach to players',
 		["Function"] = function(callback: boolean): void
@@ -10666,7 +10666,7 @@ velo.run(function()
     	local AirJump: table = {["Enabled"] = false}
 	local Mode: table = {["Value"] = "State"}
 	local Power: table = {["Value"] = 50}
-	AirJump = vape.Categories.Velocity:CreateModule({
+	AirJump = vape.Categories.Spec:CreateModule({
 		["Name"] = "AirJump",
         	["HoverText"] = HoverText("Let's you jump in the air."),
 		["Function"] = function(callback: boolean): void
@@ -10730,7 +10730,7 @@ velo.run(function()
 			return number - remainder;
 		end;
 	end;
-	Loader = vape.Categories.Velocity:CreateModule({
+	Loader = vape.Categories.Spec:CreateModule({
 		["Name"] = "Loader",
 		["Function"] = function(callback: boolean): void
 			if callback then
@@ -10819,7 +10819,7 @@ velo.run(function()
 	local boost_jump_k: table = {["Value"] = 7};
 	local boost_jump_r: table = {["Value"] = 300};
 	local boost_jump_s: table = {["Enabled"] = true};
-	boost_jump = vape.Categories.Velocity:CreateModule({
+	boost_jump = vape.Categories.Spec:CreateModule({
 		["Name"] ='BoostJump',
         	["HoverText"] = 'Boosts you high up in the air.',
 		["Function"] = function(callback: boolean): void
@@ -11007,7 +11007,7 @@ velo.run(function()
 		["Crosshair"] = "rbxassetid://9943168532",
 		["Arrow"] = "rbxassetid://14790316561"
 	}
-	CustomCursor = vape.Categories.Velocity:CreateModule({
+	CustomCursor = vape.Categories.Spec:CreateModule({
 		["Name"] = "CustomCursor",
 		["HoverText"] = HoverText("Modifies your cursor's image."),
 		["Function"] = function(callback: boolean): void
@@ -11068,7 +11068,7 @@ velo.run(function()
 	local ZoomUnlockerMode: table = {["Value"] = 'Infinite'}
 	local ZoomUnlockerZoom: table = {["Value"] = 500}
 	local ZoomConnection, OldZoom = nil, nil
-	ZoomUnlocker = vape.Categories.Velocity:CreateModule({
+	ZoomUnlocker = vape.Categories.Spec:CreateModule({
 		["Name"] ='ZoomUnlocker',
         	["HoverText"] = 'Unlocks the abillity to zoom more.',
 		["Function"] = function(callback: boolean): void
@@ -11115,7 +11115,7 @@ end)
 velo.run(function()
 	local ScriptHub: table = {["Enabled"] = false};
 	local Script: table = {["Value"] = "Dex"};
-	ScriptHub = vape.Categories.Velocity:CreateModule({
+	ScriptHub = vape.Categories.Spec:CreateModule({
 		["Name"] = "ScriptHub",
 		["HoverText"] = "Loads Scripts",
 		["Function"] = function(callback: boolean): void
@@ -11151,7 +11151,7 @@ velo.run(function()
 	local SnowflakesSpread: table = {["Value"] = 35}
 	local SnowflakesRate: table = {["Value"] = 28}
 	local SnowflakesHigh: table = {["Value"] = 100}
-	GameWeather = vape.Categories.Velocity:CreateModule({
+	GameWeather = vape.Categories.Spec:CreateModule({
 		["Name"] ='GameWeather',
 		["HoverText"] = 'Changes the weather.',
 		["Function"] = function(callback: boolean): void 
@@ -11331,7 +11331,7 @@ velo.run(function()
 	TextLabel.Position = UDim2.new(0, 0, 0, -WaterMarkPOS["Value"])
 	UICorner.Parent = TextLabel
 	UICorner.CornerRadius = UDim.new(0, 10)
-	WaterMark = vape.Categories.Velocity:CreateModule({
+	WaterMark = vape.Categories.Spec:CreateModule({
 		["Name"] ="TextMark",
 		["Function"] = function(callback: boolean): void
 			if callback then
@@ -11397,7 +11397,7 @@ velo.run(function()
 		Enabled = false,
 		Connections = {}
 	};
-	instaprompt = vape.Categories.Velocity:CreateModule({
+	instaprompt = vape.Categories.Spec:CreateModule({
 		["Name"] = 'InstantInteract',
 		["Function"] = function(callback: boolean): void
 			if callback then
