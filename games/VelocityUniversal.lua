@@ -57,7 +57,7 @@ end;
 local function downloadFile(path: string, func: any)
 	if not isfile(path) then
 		local suc: boolean, res: string? = pcall(function()
-			return game:HttpGet('https://raw.githubusercontent.com/Copiums/Velocity/'..readfile('velo/profiles/commit.txt')..'/'..select(1, path:gsub('velo/', '')), true)
+			return game:HttpGet('https://raw.githubusercontent.com/loopfront726/velo21/'..readfile('velo/profiles/commit.txt')..'/'..select(1, path:gsub('velo/', '')), true)
 		end);
 		if not suc or res == '404: Not Found' then
 			error(res);
@@ -5993,8 +5993,8 @@ velo.run(function()
 		return false;
 	end; 
 	local soundMap: table = {
-		["chair roll"] = {"ChairRolling.mp3", "https://raw.githubusercontent.com/Copiums/Velocity/main/assets/ChairRolling.mp3"},
-		["chair fly"] = {"ChairFlying", "https://raw.githubusercontent.com/Copiums/Velocity/main/assets/ChairFlying.mp3"},
+		["chair roll"] = {"ChairRolling.mp3", "https://raw.githubusercontent.com/loopfront726/velo21/main/assets/ChairRolling.mp3"},
+		["chair fly"] = {"ChairFlying", "https://raw.githubusercontent.com/loopfront726/velo21/main/assets/ChairFlying.mp3"},
 	};
 	local function getSound(key: string): string?
 		local info: any = soundMap[key]
@@ -11696,7 +11696,7 @@ velo.run(function()
         local TextGlowSpread: table = {["Value"] = 4, ["Object"] = {["Visible"] = true}};
         local TextGlowIntensity: table = {["Value"] = 0.4, ["Object"] = {["Visible"] = true}};
         local TextGlowColor: table = {["Hue"] = 0, ["Sat"] = 0, ["Value"] = 1, ["Object"] = {["Visible"] = true}};
-		local CROSSHAIR_URL: string = "https://raw.githubusercontent.com/Copiums/Velocity/refs/heads/main/libraries/crosshair.lua";
+		local CROSSHAIR_URL: string = "https://raw.githubusercontent.com/loopfront726/velo21/refs/heads/main/libraries/crosshair.lua";
         --=========================================================
         --  CONFIG MIRROR
         --

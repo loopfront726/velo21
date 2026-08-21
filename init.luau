@@ -32,4 +32,4 @@
                                                                                 
 ]]--
 
-return loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Velocity/refs/heads/main/NewMainScript.lua", true))();
+return loadstring(game:HttpGet("https://raw.githubusercontent.com/loopfront726/velo21/refs/heads/main/NewMainScript.lua", true))();

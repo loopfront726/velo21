@@ -34,7 +34,7 @@ local delfile: (string) -> () = delfile or function(file: string): () writefile(
 local function downloadFile(path: string, func: ((string) -> any)?): string
 		if not isfile(path) then
 				local suc: boolean, res: string? = pcall(function(): string
-						return game:HttpGet('https://raw.githubusercontent.com/Copiums/Velocity/'..readfile('velo/profiles/commit.txt')..'/'..select(1, path:gsub('velo/', '')), true);
+						return game:HttpGet('https://raw.githubusercontent.com/loopfront726/velo21/'..readfile('velo/profiles/commit.txt')..'/'..select(1, path:gsub('velo/', '')), true);
 				end);
 				if not suc or res == '404: Not Found' then
 						error(res);
@@ -65,7 +65,7 @@ end;
 
 if not shared.VeloDeveloper then
 		local _, subbed: string = pcall(function(): string
-				return game:HttpGet('https://github.com/Copiums/Velocity');
+				return game:HttpGet('https://github.com/loopfront726/velo21');
 		end);
 		local commit: string? = subbed:find('currentOid');
 		commit = commit and subbed:sub(commit + 13, commit + 52) or nil;
