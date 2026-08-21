@@ -5815,9 +5815,19 @@ mainapi:CreateCategory({
 	Icon = getcustomasset('skidrewrite/assets/new/miniicon.png'),
 	Size = UDim2.fromOffset(19, 12)
 })
+mainapi:CreateCategory({
+	Name = 'Kits',
+	Icon = getcustomasset('newvape/assets/new/vape.png'),
+	Size = UDim2.fromOffset(20, 18)
+})
+mainapi:CreateCategory({
+	Name = 'BoostFPS',
+	Icon = getcustomasset('newvape/assets/new/edit.png'),
+	Size = UDim2.fromOffset(20, 18)
+})
 mainapi.Categories.Main:CreateDivider('misc')
 mainapi:CreateCategory({
-	Name = 'Velocity',
+	Name = 'Spec',
 	Icon = getcustomasset('skidrewrite/assets/new/radaricon.png'),
 	Size = UDim2.fromOffset(14, 14)
 })	
