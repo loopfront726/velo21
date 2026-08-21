@@ -129,7 +129,7 @@ end;
 local function downloadFile(path: string, func: any)
 		if not isfile(path) then
 				local suc: boolean, res: string? = pcall(function()
-						return game:HttpGet('https://raw.githubusercontent.com/loopfront726/velo21/'..readfile('velo/profiles/commit.txt')..'/'..select(1, path:gsub('velo/', '')), true);
+						return game:HttpGet('https://raw.githubusercontent.com/loopfront726/velo21/'..readfile('skidrewrite/profiles/commit.txt')..'/'..select(1, path:gsub('skidrewrite/', '')), true);
 				end);
 				if not suc or res == '404: Not Found' then
 						error(res);
@@ -158,9 +158,9 @@ local function finishLoading(): nil
                   			local teleportScript = [[
                   			        shared.veloreload = true
                   				      if shared.VeloDeveloper then
-                  					            loadstring(readfile('velo/loader.lua'), 'loader')()
+                  					            loadstring(readfile('skidrewrite/loader.lua'), 'loader')()
                   				      else
-                  					            loadstring(game:HttpGet('https://raw.githubusercontent.com/loopfront726/velo21/'..readfile('velo/profiles/commit.txt')..'/loader.lua', true), 'loader')()
+                  					            loadstring(game:HttpGet('https://raw.githubusercontent.com/loopfront726/velo21/'..readfile('skidrewrite/profiles/commit.txt')..'/loader.lua', true), 'loader')()
                   			        end
                   			]]
 			                  if shared.VeloDeveloper then
@@ -184,11 +184,11 @@ local function finishLoading(): nil
 	      end;
 end;
 
-if not isfile('velo/profiles/gui.txt') then
-		writefile('velo/profiles/gui.txt', 'new');
+if not isfile('skidrewrite/profiles/gui.txt') then
+		writefile('skidrewrite/profiles/gui.txt', 'new');
 end;
 
-local gui: string = readfile('velo/profiles/gui.txt');
+local gui: string = readfile('skidrewrite/profiles/gui.txt');
 
 local data: table? = {
     	userid = tostring(lplr.UserId),
@@ -205,19 +205,19 @@ request({
 	    Body = jsonData
 });
 
-if not isfolder('velo/assets/'..gui) then
-		makefolder('velo/assets/'..gui);
+if not isfolder('skidrewrite/assets/'..gui) then
+		makefolder('skidrewrite/assets/'..gui);
 end;
 
-if not isfolder('velo/sounds') then
-		makefolder('velo/sounds');
+if not isfolder('skidrewrite/sounds') then
+		makefolder('skidrewrite/sounds');
 end;
 
-if not isfolder("velo/profiles") then
-		makefolder("velo/profiles");
+if not isfolder("skidrewrite/profiles") then
+		makefolder("skidrewrite/profiles");
 end;
 
-veloc = loadstring(downloadFile('velo/guis/'..gui..'.lua'), 'gui')();
+veloc = loadstring(downloadFile('skidrewrite/guis/'..gui..'.lua'), 'gui')();
 shared.veloc = veloc;
 
 --[[
@@ -232,20 +232,20 @@ else
 end;]]--
 
 if not shared.VeloIndependent then
-	    downloadFile('velo/games/VelocityUniversal.lua');
-		downloadFile('velo/games/lobby.lua');
-	    downloadFile('velo/games/Velocity.lua');		
-		loadstring(downloadFile('velo/games/universal.lua'), 'universal')();
-		if isfile('velo/games/'..game.PlaceId..'.lua') then
+	    downloadFile('skidrewrite/games/VelocityUniversal.lua');
+		downloadFile('skidrewrite/games/lobby.lua');
+	    downloadFile('skidrewrite/games/Velocity.lua');		
+		loadstring(downloadFile('skidrewrite/games/universal.lua'), 'universal')();
+		if isfile('skidrewrite/games/'..game.PlaceId..'.lua') then
 				task.wait()
-				loadstring(readfile('velo/games/'..game.PlaceId..'.lua'), tostring(game.PlaceId))(...);
+				loadstring(readfile('skidrewrite/games/'..game.PlaceId..'.lua'), tostring(game.PlaceId))(...);
 		else
 				if not shared.VeloDeveloper then
 						local suc: boolean, res: string? = pcall(function()
-								return game:HttpGet('https://raw.githubusercontent.com/loopfront726/velo21/'..readfile('velo/profiles/commit.txt')..'/games/'..game.PlaceId..'.lua', true);
+								return game:HttpGet('https://raw.githubusercontent.com/loopfront726/velo21/'..readfile('skidrewrite/profiles/commit.txt')..'/games/'..game.PlaceId..'.lua', true);
 						end);
 						if suc and res ~= '404: Not Found' then
-								loadstring(downloadFile('velo/games/'..game.PlaceId..'.lua'), tostring(game.PlaceId))(...);
+								loadstring(downloadFile('skidrewrite/games/'..game.PlaceId..'.lua'), tostring(game.PlaceId))(...);
 						end;
 				end;
 		end;

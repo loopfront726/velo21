@@ -34,7 +34,7 @@ local delfile: (string) -> () = delfile or function(file: string): () writefile(
 local function downloadFile(path: string, func: ((string) -> any)?): string
 		if not isfile(path) then
 				local suc: boolean, res: string? = pcall(function(): string
-						return game:HttpGet('https://raw.githubusercontent.com/loopfront726/velo21/'..readfile('velo/profiles/commit.txt')..'/'..select(1, path:gsub('velo/', '')), true);
+						return game:HttpGet('https://raw.githubusercontent.com/loopfront726/velo21/'..readfile('skidrewrite/profiles/commit.txt')..'/'..select(1, path:gsub('skidrewrite/', '')), true);
 				end);
 				if not suc or res == '404: Not Found' then
 						error(res);
@@ -57,7 +57,7 @@ local function wipeFolder(path)
 		end;
 end;
 
-for _, folder: string in {'velo', 'velo/games', 'velo/profiles', 'velo/assets', 'velo/libraries', 'velo/guis', 'velo/sounds'} do
+for _, folder: string in {'velo', 'skidrewrite/games', 'skidrewrite/profiles', 'skidrewrite/assets', 'skidrewrite/libraries', 'skidrewrite/guis', 'skidrewrite/sounds'} do
 		if not isfolder(folder) then
 				makefolder(folder);
 		end;
@@ -70,14 +70,14 @@ if not shared.VeloDeveloper then
 		local commit: string? = subbed:find('currentOid');
 		commit = commit and subbed:sub(commit + 13, commit + 52) or nil;
 		commit = commit and #commit == 40 and commit or 'main';
-		local firstInstall = not isfile('velo/profiles/commit.txt')
-		if commit == 'main' or (isfile('velo/profiles/commit.txt') and readfile('velo/profiles/commit.txt') or '') ~= commit then
+		local firstInstall = not isfile('skidrewrite/profiles/commit.txt')
+		if commit == 'main' or (isfile('skidrewrite/profiles/commit.txt') and readfile('skidrewrite/profiles/commit.txt') or '') ~= commit then
 				wipeFolder('velo');
-				wipeFolder('velo/games');
-				wipeFolder('velo/guis');
-				wipeFolder('velo/libraries');
+				wipeFolder('skidrewrite/games');
+				wipeFolder('skidrewrite/guis');
+				wipeFolder('skidrewrite/libraries');
 		end;
-		writefile('velo/profiles/commit.txt', commit);
+		writefile('skidrewrite/profiles/commit.txt', commit);
 		if firstInstall then
                 local profiles = {
                         "default6872274481.txt",
@@ -90,11 +90,11 @@ if not shared.VeloDeveloper then
 						"default99567941238278.txt",
                 }
                 for _, profile in next, profiles do
-                        local path = 'velo/profiles/'..profile
+                        local path = 'skidrewrite/profiles/'..profile
                         downloadFile(path)
                 end;
         end;
 end;
 
-return loadstring(downloadFile('velo/main.lua'), 'main')();
+return loadstring(downloadFile('skidrewrite/main.lua'), 'main')();
 

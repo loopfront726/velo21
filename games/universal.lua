@@ -43,5 +43,5 @@ velo.run = function(x : Function)
 end;
 
 velo.run(function()
-        loadstring(readfile("velo/games/VelocityUniversal.lua"))();
+        loadstring(readfile("skidrewrite/games/VelocityUniversal.lua"))();
 end)
